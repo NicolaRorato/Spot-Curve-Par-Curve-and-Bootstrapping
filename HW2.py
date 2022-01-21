@@ -19,19 +19,7 @@ def MultipleRegression(x, y, intercept=True):
             '''
     mlr = LinearRegression(fit_intercept=intercept)
     mlr.fit(x, y)
-    # print("Intercept: ", mlr.intercept_)
-    # print("Coefficients:")
-    # list(zip(x, mlr.coef_))
     return mlr.intercept_, mlr.coef_
-
-# def Bootstrap(price, coupon, sumOfPastDiscountFactors):
-#     '''Bootstrap D(T) value from Coupon-Bonds
-#         Inputs:
-#             price = Bond Price
-#             coupon = Bond Coupon
-#             sumOfPastDiscountFactors = Cumulative sum of discount factors for previous periods
-#             '''
-#     return (price - coupon/2*sumOfPastDiscountFactors)/(100 + coupon/2)
 
 strips = pd.read_csv('Homework 2 Data Strips.csv')
 strips.rename({'Maturity':'T'}, axis=1, inplace=True)
